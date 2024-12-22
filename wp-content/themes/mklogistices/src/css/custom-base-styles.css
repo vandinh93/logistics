@@ -1,0 +1,19 @@
+@layer base {
+  html {
+    @apply scroll-smooth;
+
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    @apply m-0 p-0 font-body;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-[1920px] mx-auto px-5 md:px-10 xl:px-[96px];
+  }
+}

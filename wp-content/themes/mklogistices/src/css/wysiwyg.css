@@ -1,0 +1,27 @@
+.wysiwyg {
+  ul,
+  p {
+    @apply mb-6 text-base last:mb-0 xl:mb-6 3xl:text-fs-18;
+  }
+
+  .h2,
+  blockquote {
+    @apply font-heading text-fs-34 md:text-fs-44 3xl:text-fs-48;
+  }
+
+  blockquote {
+    @apply italic;
+  }
+
+  ul {
+    @apply list-disc list-inside;
+  }
+
+  ol {
+    @apply list-decimal list-inside;
+  }
+
+  a {
+    @apply underline underline-offset-2 hover:no-underline;
+  }
+}

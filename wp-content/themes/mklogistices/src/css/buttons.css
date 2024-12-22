@@ -1,0 +1,29 @@
+.btn {
+  @apply flex items-center justify-center w-fit h-[42px] px-8 text-base rounded-[60px] font-body
+  transition-[background] duration-300
+  md:h-[53px] md:px-9 md:text-fs-18;
+
+  &.has-icon {
+    @apply pl-5 pr-3;
+  }
+}
+
+.btn--green {
+  @apply bg-green text-white hover:bg-green-hover;
+}
+
+.btn--transparent-white {
+  @apply bg-white/[.08] text-white hover:bg-white/20;
+}
+
+.btn--transparent-black {
+  @apply bg-black/[.08] text-black;
+}
+
+.skip_link {
+  @apply !fixed top-3 left-3 btn btn--green translate-y-[-150%] z-[99999999];
+
+  &:focus {
+    @apply translate-y-0;
+  }
+}

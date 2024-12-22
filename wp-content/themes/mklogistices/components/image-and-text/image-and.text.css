@@ -1,0 +1,5 @@
+.image-and-text {
+  img {
+    @apply absolute inset-0 w-full h-full;
+  }
+}

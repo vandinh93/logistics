@@ -1,0 +1,11 @@
+name: minhkylogistics
+recipe: wordpress
+config:
+  webroot: .
+  php: '8.1'
+services:
+  mailhog:
+    type: mailhog
+    portforward: true
+    hogfrom:
+      - appserver

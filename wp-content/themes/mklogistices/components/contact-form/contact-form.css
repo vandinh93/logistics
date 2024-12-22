@@ -1,0 +1,270 @@
+.contact-form {
+  @apply relative w-full bg-gray;
+
+  .gform_wrapper {
+    @apply relative pb-[60px] md:pb-[64px] lg:pb-[76px];
+  }
+
+  .gform_heading,
+  .gfield_required,
+  .gform_validation_errors,
+  .validation_message {
+    @apply !hidden;
+  }
+
+  .gform_fields {
+    @apply !flex !flex-wrap !gap-0;
+  }
+
+  .gfield--width-half {
+    @apply !w-full md:!w-1/2;
+
+    &:not(:last-child) {
+      @apply !h-[143px] md:!h-[161px] xl:!h-[221px];
+    }
+  }
+
+  .gsection-50 {
+    @apply !relative !flex !flex-col !text-center !w-full !py-10 !px-5 !border-0 md:!py-[48px] lg:!w-1/2 lg:!py-10;
+  }
+
+  .gsection_title {
+    @apply !mb-8 !text-fs-13 !text-cinder md:!mb-[34px] lg:!mb-8 lg:!text-base;
+  }
+
+  .gsection_description {
+    @apply !m-0 !pt-0 !font-heading !text-fs-20 md:!text-fs-31 3xl:!text-fs-45;
+
+    a {
+      @apply relative lg:after:absolute lg:after:bottom-0 lg:after:left-0 lg:after:h-px lg:after:w-0 lg:after:bg-current lg:after:transition-[width] lg:after:duration-300 lg:hover:after:w-full;
+    }
+  }
+
+  .gfield:not(.gsection) {
+    @apply relative px-10 pt-9 pb-[37px] cursor-text last:pb-[54px] transition-[background] md:px-10 md:pt-[42px] md:pb-[43px] md:hover:bg-dark-gray md:last:pb-[67px] xl:pt-[69px] xl:pb-[70px] xl:px-24 xl:last:pb-[122px];
+  }
+
+  .gfield-select-custom {
+    @apply !cursor-pointer;
+  }
+
+  .gfield_label {
+    @apply !mb-[19px] !text-fs-13 !text-cinder !font-normal md:!mb-4 xl:!mb-5 3xl:!text-base;
+  }
+
+  input:not(.gform_button),
+  select,
+  textarea {
+    @apply !p-0 !text-fs-20 !text-cinder !border-0 bg-transparent outline-0 !min-h-0 md:!text-fs-26 xl:!text-fs-32;
+  }
+
+  .gfield-textarea {
+    @apply h-[336px] md:h-[280px] xl:!h-[378px];
+  }
+
+  input:not(.gform_button),
+  select {
+    @apply max-h-[26px] md:max-h-[36px] xl:max-h-[38px] outline-none;
+  }
+
+  .gform_wrapper .gfield_error [aria-invalid=true] {
+    @apply !border-0;
+  }
+
+  textarea {
+    @apply !h-[196px] md:!h-[126px] xl:!w-1/2 xl:!h-[136px] outline-none;
+  }
+
+  select {
+    @apply appearance-none;
+
+    background: url('data:image/svg+xml,<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 13L16 19L22 13" stroke="%230D0D15" stroke-width="1.5" stroke-linecap="square"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: 32px;
+  }
+
+  .gfield--width-full {
+    @apply !w-full;
+  }
+
+  .gform_footer {
+    @apply relative !flex !justify-center !m-0 !pb-0 !pt-10 md:!pt-12 lg:!pt-[76px];
+
+    .gform_button {
+      @apply flex !justify-center !items-center !min-w-[172px] !h-[42px] !px-8 !pb-0.5 !mb-0 !text-base !bg-green !text-white rounded-[60px] cursor-pointer transition-[background] duration-300 md:hover:!bg-green-hover xl:!min-w-[193px] xl:!h-[53px] xl:!px-9 3xl:!text-fs-18;
+    }
+
+    img {
+      @apply absolute bottom-[-20px];
+    }
+  }
+
+  .gfield_error {
+    .gfield_label {
+      @apply !text-error;
+    }
+
+    [aria-invalid=true] {
+      @apply !border-transparent;
+    }
+  }
+}
+
+.contact-form__link {
+  @apply relative transition-colors duration-300 hover:text-green;
+}
+
+/* css line */
+.contact-form__line-row {
+  @apply absolute top-0 left-0 right-0 w-full h-px bg-dark-gray
+  lg:scale-x-0 lg:duration-700 lg:origin-center;
+
+  .line-active & {
+    @apply lg:scale-100;
+  }
+}
+
+.contact-form__line-col {
+  @apply absolute top-0 right-0 w-px h-full bg-dark-gray
+  lg:scale-y-0 lg:duration-700 lg:origin-top-left;
+}
+
+.contact-form__line-col--1 {
+  .line-active & {
+    @apply lg:scale-100;
+  }
+}
+
+.contact-form__line-row--3,
+.contact-form__line-row--2 {
+  .line-active & {
+    @apply lg:delay-700;
+  }
+}
+
+.contact-form__line-row-bottom {
+  @apply top-auto bottom-0;
+}
+
+.contact-form__line-row--4 {
+  @apply top-[143px] md:top-[161px] xl:top-[221px];
+
+  .line-active & {
+    @apply lg:delay-[1.4s];
+  }
+}
+
+.contact-form__line-row--5 {
+  @apply top-[286px] md:top-[322px] xl:top-[442px];
+
+  .line-active & {
+    @apply lg:delay-[2.1s];
+  }
+}
+
+.contact-form__line-row--6 {
+  @apply top-[429px] md:top-[602px] xl:top-[820px];
+
+  .line-active & {
+    @apply lg:delay-[2.8s];
+  }
+}
+
+.contact-form__line-row--7 {
+  @apply top-[572px] md:hidden;
+}
+
+.contact-form__line-row--8 {
+  @apply top-[908px] md:hidden;
+}
+
+.contact-form__line-col-bottom {
+  @apply hidden md:absolute md:block md:top-0 md:left-[calc(50%_-_1px)] md:w-px md:h-[161px] md:bg-dark-gray xl:h-[221px]
+  lg:scale-y-0 lg:duration-700 lg:origin-top-left lg:delay-700;
+
+  .line-active & {
+    @apply lg:scale-100;
+  }
+}
+
+.contact-form__line-col-bottom--2 {
+  @apply md:top-[161px] xl:top-[221px];
+
+  .line-active & {
+    @apply lg:delay-[1.4s];
+  }
+}
+
+/* css custom select */
+.select-field__inner {
+  @apply md:relative flex gap-2 items-center;
+}
+
+.select-field__current {
+  @apply relative pr-8 text-fs-20 text-cinder bg-transparent outline-0 md:text-fs-26 3xl:text-fs-32;
+}
+
+.select-field__desktop {
+  @apply absolute top-[calc(100%_+_29px)] left-0 w-full z-20 max-h-[262px] overflow-y-auto hidden bg-white border border-dark-gray opacity-0 invisible transition-[opacity,_visibility] duration-300 md:block lg:max-h-[342px];
+
+  .opened & {
+    @apply opacity-100 visible;
+  }
+}
+
+.select-field__mobile {
+  @apply absolute top-0 left-0 w-full h-full md:hidden;
+
+  select {
+    @apply w-full h-full max-h-full opacity-0 cursor-pointer;
+  }
+}
+
+.select-field__dropdown {
+  @apply flex flex-col text-cinder text-base lg:text-fs-18;
+}
+
+.select-field__dropdown-item {
+  @apply px-6 py-5 transition-[background] duration-300 border-b border-dark-gray cursor-pointer last:border-b-0 hover:bg-gray [&.selected]:bg-gray lg:px-9 lg:py-[30px];
+}
+
+.select-field__arrow {
+  @apply absolute top-1/2 right-0 -translate-y-1/2 w-8 h-[26px] cursor-pointer md:w-8 md:h-8 transition-opacity duration-1000;
+
+  &.arrow-down {
+    .opened & {
+      @apply opacity-0 invisible;
+    }
+  }
+
+  &.arrow-up {
+    @apply opacity-0 invisible -rotate-180;
+
+    .opened & {
+      @apply opacity-100 visible;
+    }
+  }
+}
+
+/* css thank you */
+
+.gform_confirmation_wrapper + .contact-form__line {
+  @apply hidden;
+}
+
+.gform_confirmation_wrapper {
+  @apply px-5 py-[120px] lg:py-[200px];
+}
+
+.gform_confirmation_message {
+  @apply max-w-[625px] mx-auto text-center text-cinder text-base xl:text-fs-18;
+
+  h2 {
+    @apply mb-5 text-fs-34 font-heading md:mb-6 md:text-fs-44 xl:text-fs-54;
+  }
+
+  br {
+    @apply hidden;
+  }
+}

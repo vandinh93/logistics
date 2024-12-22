@@ -1,0 +1,173 @@
+.header {
+  @apply fixed top-0 w-full z-50 pt-10 pb-3 text-white/60 transition-all duration-300
+  md:pt-[30px] md:pb-[55px]
+  lg:py-0 lg:duration-500 lg:z-[100] lg:w-full;
+
+  &::after {
+    @apply content-[''] absolute top-0 left-0 z-0 w-full h-full bg-gradient-header transition-all duration-300 lg:hover:bg-cinder/60;
+
+    .is-active-slideout & {
+      @apply lg:bg-cinder/60;
+    }
+  }
+
+  &.is-hide {
+    @apply -translate-y-full;
+  }
+
+  &.is-show {
+    @apply translate-y-0 after:bg-cinder/60;
+  }
+}
+
+.header__overlay {
+  @apply absolute top-0 left-0 w-full h-screen backdrop-blur-none transition-all duration-300 pointer-events-none;
+
+  .is-active-slideout & {
+    @apply backdrop-blur-sm;
+  }
+}
+
+.header__inner {
+  @apply flex items-end justify-between lg:items-baseline;
+}
+
+.header__nav {
+  @apply fixed top-0 left-0 z-[99] w-full h-[calc(var(--vh)*100)] bg-cinder/60 lg-max:-translate-y-full lg-max:backdrop-blur-[8px]
+  lg:static lg:w-auto lg:h-auto lg:bg-transparent lg:!transform-none;
+}
+
+.header__nav-item-link {
+  @apply lg:!opacity-100 lg:!translate-y-0;
+}
+
+.header__hamburger {
+  @apply relative z-[100] w-20 lg:hidden;
+}
+
+.header__nav-inner {
+  @apply h-full lg:h-auto;
+}
+
+.header__nav-content {
+  @apply flex flex-col justify-between h-full pt-[135px] px-5 pb-10 overflow-auto
+  md:pt-[129px] md:px-10 md:pb-[88px]
+  lg:p-0 lg:items-center lg:overflow-visible;
+}
+
+.header__nav-items {
+  @apply flex flex-col gap-8
+  md:gap-[34px]
+  lg:flex-row lg:gap-0 lg:-mx-[38px];
+}
+
+.header__nav-item {
+  @apply lg:px-[38px];
+}
+
+.header__nav-title {
+  @apply relative flex items-center text-white text-base font-medium transition-all duration-500 lg:pt-[99px] lg:pb-[39px]
+  lg:text-fs-18 lg:text-white/60 lg:hover:text-white;
+
+  .is-active-sub-menu & {
+    @apply lg-max:translate-y-[50px] lg-max:opacity-0 lg-max:invisible;
+  }
+
+  .header__nav-item-has-child.is-open-sub-menu & {
+    @apply text-white lg:after:w-full;
+  }
+}
+
+.header__right {
+  @apply flex lg:gap-[168px];
+
+  .header__nav-title,
+  a {
+    @apply relative lg:after:absolute lg:after:bottom-10 lg:after:left-0 lg:after:h-px lg:after:w-0 lg:after:bg-current lg:after:transition-[width] lg:after:duration-300 lg:hover:after:w-full;
+  }
+
+  ul ul a {
+    @apply lg:after:bottom-0;
+  }
+}
+
+.header__nav-item-content {
+  @apply fixed top-0 right-0 w-full h-full pt-[123px] px-5 transition-all duration-500
+  md:pt-[129px] md:px-10
+  lg:absolute lg:top-full lg:z-10 lg:flex lg:items-center lg:duration-300 lg:h-[calc(100vh_-_162px)] lg:backdrop-blur-sm
+  lg:w-[940px] lg:pt-0 lg:pr-0 lg:pl-[148px] lg:text-right lg:bg-cinder/40 lg:opacity-0 lg:invisible;
+
+  .is-active-sub-menu .is-open-sub-menu & {
+    @apply lg-max:translate-y-0 lg-max:opacity-100 lg-max:visible;
+  }
+}
+
+.header__nav-item-content-inner {
+  h2,
+  p,
+  ul {
+    @apply lg:translate-y-[120px] lg:opacity-0 lg:invisible;
+  }
+}
+
+.header__nav-item-has-child.is-open-sub-menu {
+  .header__nav-item-content {
+    @apply lg:opacity-100 lg:visible;
+  }
+
+  .header__nav-item-content-inner {
+    & > * {
+      @apply lg:translate-y-0 lg:opacity-100 lg:visible lg:transition-all lg:duration-300;
+    }
+
+    h2 {
+      @apply lg:delay-150;
+    }
+
+    p {
+      @apply lg:delay-200;
+    }
+
+    ul {
+      @apply lg:delay-[250ms];
+    }
+  }
+}
+
+.header__nav-close-menu,
+.header__nav-item-back {
+  @apply fixed top-[54px] w-5 h-5 lg:hidden;
+}
+
+.header__nav-close-menu {
+  @apply left-5 z-50;
+}
+
+.header__nav-item-back {
+  @apply right-5 md:right-10 opacity-0 invisible transition-all duration-300;
+
+  .is-active-sub-menu .is-open-sub-menu & {
+    @apply opacity-100 visible;
+  }
+}
+
+.header__contact {
+  @apply pt-[52px] border-t border-white/20 lg:hidden;
+}
+
+.header__cta-mobile {
+  @apply inline-flex items-center h-[42px] mt-8 px-8 capitalize text-base text-white bg-white-8 rounded-[60px] md:mt-[34px];
+}
+
+.header__contact-content {
+  @apply mt-3 text-fs-18 text-white md:mt-4;
+
+  * + * {
+    @apply mt-3 md:mt-4;
+  }
+}
+
+body.is-active-slideout,
+body.is-open-menu {
+  @apply overflow-clip;
+}

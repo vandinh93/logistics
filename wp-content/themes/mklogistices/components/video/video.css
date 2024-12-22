@@ -1,0 +1,35 @@
+.video__wrapper {
+  @apply absolute top-0 left-0 w-full h-full object-cover object-center;
+}
+
+.video__image-fallback {
+  @apply absolute top-0 left-0 w-full h-full transition-[opacity,_vivisibility] z-10;
+
+  .is-playing & {
+    @apply opacity-0 invisible;
+  }
+}
+
+.video__button {
+  @apply absolute bottom-6 right-6 z-30 flex items-center justify-center w-12 h-12 bg-white rounded-full;
+}
+
+.video__play-button {
+  @apply block pl-1;
+
+  .is-playing & {
+    @apply hidden;
+  }
+
+  svg {
+    @apply w-5;
+  }
+}
+
+.video__pause-button {
+  @apply hidden;
+
+  .is-playing & {
+    @apply block;
+  }
+}
