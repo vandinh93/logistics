@@ -42,6 +42,13 @@ function _get_svg($name){
   return '';
 }
 
+function _get_icon($name, $class = ''){
+  $dir  = get_template_directory_uri().'/assets/icon/';
+  $path = $dir.$name.'.png';
+  $img = '<img class="' . $class . '" src="' . $path . '" alt="Icon" />';
+  return $img;
+}
+
 function _get_file_icon( $extension ) {
   $icons = get_field( 'file_type_icons', 'option' ) ?: array();
   $found = wp_list_filter(

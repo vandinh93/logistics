@@ -8,8 +8,8 @@
   }
 }
 
-.btn--green {
-  @apply bg-green text-white hover:bg-green-hover;
+.btn--yellow {
+  @apply bg-yellow text-white hover:bg-yellow/80;
 }
 
 .btn--transparent-white {
@@ -21,7 +21,7 @@
 }
 
 .skip_link {
-  @apply !fixed top-3 left-3 btn btn--green translate-y-[-150%] z-[99999999];
+  @apply !fixed top-3 left-3 btn btn--yellow translate-y-[-150%] z-[99999999];
 
   &:focus {
     @apply translate-y-0;

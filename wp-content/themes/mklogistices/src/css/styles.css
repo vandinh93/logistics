@@ -3,6 +3,7 @@
 @import "./custom-base-styles.css";
 @import "./buttons.css";
 @import "./wysiwyg.css";
+@import "./animation.css";
 
 @import "tailwindcss/components";
 /*
@@ -16,33 +17,7 @@
 @import "./custom-utilities.css";
 */
 
-@import '../../components/header/header.css';
-@import '../../components/footer/footer.css';
+/* @import '../../components/header/header.css'; */
+/* @import '../../components/footer/footer.css'; */
 @import '../../components/image/image.css';
-@import '../../components/image-and-text/image-and.text.css';
-@import '../../components/contact-form/contact-form.css';
-@import '../../components/video/video.css';
-
-.line-wrapper {
-  @apply overflow-hidden [&_*]:inline-block pb-0.5;
-}
-
-html.lenis, html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: auto;
-}
-
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
-}
+@import '../../components/hero/hero.css';
