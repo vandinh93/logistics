@@ -1,4 +1,3 @@
-import gsap from 'gsap'
 import on from 'dom-event'
 import throttle from 'lodash.throttle'
 import { select, setAttribute, set, unset, selectAll, trigger, contains } from '../../src/js/lib/util'
@@ -10,11 +9,9 @@ const selectors = {
   NAV_PARENT_ITEM_SELECTOR: '.js-nav-parent-item',
   NAV_ITEM_SELECTOR: '.js-nav-item',
   NAV_ITEM_LINK_SELECTOR: '.js-nav-item-link',
-  NAV_ITEM_BACK_SELECTOR: '.js-nav-item-back',
   CONTACT_SELECTOR: '.js-header-contact',
   SUB_NAV_SELECTOR: '.js-nav-item-content',
   OPEN_MENU_CLASS: 'is-open-menu',
-  OPEN_SUB_MENU_CLASS: 'is-open-sub-menu',
   ACTIVE_SUB_MENU_CLASS: 'is-active-sub-menu',
   ACTIVE_SLIDEOUT_CLASS: 'is-active-slideout',
   SHOW_CLASS: 'is-show',
@@ -24,10 +21,8 @@ const selectors = {
 export default el => {
   const toggleNavEl = select(selectors.TOGGLE_NAV_SELECTOR, el)
   const headerNavEl = select(selectors.HEADER_NAV_SELECTOR, el)
-  const menuItemEls = selectAll(selectors.NAV_ITEM_SELECTOR, el)
   const navParentItemEls = selectAll(selectors.NAV_PARENT_ITEM_SELECTOR, el)
   const navItemLinkEls = selectAll(selectors.NAV_ITEM_LINK_SELECTOR, el)
-  const navItemBackEls = selectAll(selectors.NAV_ITEM_BACK_SELECTOR, el)
   const subNavEls = selectAll(selectors.SUB_NAV_SELECTOR, el)
   let lastScrollTop = 0
 
@@ -38,51 +33,20 @@ export default el => {
   setProperties()
   on(window, 'resize', throttle(setProperties, 100))
 
-  let tl = gsap.timeline({paused:true, reversed:true})
-    .to(headerNavEl, {duration: 0.5, y: 0, visibility: 'visible', ease: 'Power2.easeOut'})
-  menuItemEls.length && tl.from(menuItemEls , {duration: 0.5, opacity: 0, y: 100, ease: 'Power2.easeOut', stagger: 0.1})
-  tl.from('.js-header-contact', {duration: 0.5, opacity: 0, y: 100, ease: 'Power2.easeOut'}, '-=0.4')
-
-  const animate = () => {
-    tl.reversed() ? tl.timeScale(1).play() : tl.timeScale(3).reverse()
-  }
-
   // handle menu navigation
   const openMenu = () => {
     setAttribute('aria-expanded', true, toggleNavEl)
     set(document.body, selectors.OPEN_MENU_CLASS)
-    trigger('lenis-stop', document.body)
   }
 
   const closeMenu = () => {
     setAttribute('aria-expanded', false, toggleNavEl)
     unset(headerNavEl, selectors.ACTIVE_SUB_MENU_CLASS)
     unset(document.body, selectors.OPEN_MENU_CLASS)
-    trigger('lenis-start', document.body)
-
-    navParentItemEls.length > 0 && navParentItemEls.forEach((itemEl) => {
-      unset(itemEl, selectors.OPEN_SUB_MENU_CLASS)
-    })
 
     navItemLinkEls.length > 0 && navItemLinkEls.forEach((itemEl) => {
       setAttribute('aria-expanded', false, itemEl)
     })
-  }
-
-  const openSubMenu = (btn) => {
-    const buttonEl = btn.closest(selectors.NAV_ITEM_LINK_SELECTOR)
-
-    buttonEl && setAttribute('aria-expanded', true, buttonEl)
-    set(headerNavEl, selectors.ACTIVE_SUB_MENU_CLASS)
-    set(btn.closest(selectors.NAV_PARENT_ITEM_SELECTOR), selectors.OPEN_SUB_MENU_CLASS)
-  }
-
-  const closeSubMenu = (btn) => {
-    const buttonEl = select(selectors.NAV_ITEM_LINK_SELECTOR, btn.closest(selectors.NAV_PARENT_ITEM_SELECTOR))
-
-    buttonEl && setAttribute('aria-expanded', false, buttonEl)
-    unset(headerNavEl, selectors.ACTIVE_SUB_MENU_CLASS)
-    unset(btn.closest(selectors.NAV_PARENT_ITEM_SELECTOR), selectors.OPEN_SUB_MENU_CLASS)
   }
 
   toggleNavEl && on(toggleNavEl, 'click', () => {
@@ -91,12 +55,20 @@ export default el => {
     } else {
       openMenu()
     }
-    animate()
   })
 
   navItemLinkEls.length > 0 && navItemLinkEls.forEach((itemEl) => {
     on(itemEl, 'click', (e) => {
-      openSubMenu(e.target)
+      const parentEl = itemEl.closest(selectors.NAV_PARENT_ITEM_SELECTOR)
+      const contentEl = select(selectors.SUB_NAV_SELECTOR, parentEl)
+
+      parentEl.classList.toggle(selectors.ACTIVE_SUB_MENU_CLASS)
+      contentEl.style.maxHeight = contentEl.style.maxHeight ? null : `${contentEl.scrollHeight}px`
+      if (contains(parentEl, selectors.ACTIVE_SUB_MENU_CLASS)) {
+        setAttribute('aria-expanded', true, itemEl)
+      } else {
+        setAttribute('aria-expanded', false, itemEl)
+      }
     })
   })
 
@@ -105,9 +77,7 @@ export default el => {
       return
     }
     closeAllSubNav()
-    set(nav, selectors.OPEN_SUB_MENU_CLASS)
     set(document.body, selectors.ACTIVE_SLIDEOUT_CLASS)
-    trigger('lenis-stop', document.body)
 
     const btnSubmenu = select(selectors.NAV_ITEM_LINK_SELECTOR, nav)
     btnSubmenu?.setAttribute('aria-expanded', true)
@@ -118,10 +88,8 @@ export default el => {
       return
     }
     unset(document.body, selectors.ACTIVE_SLIDEOUT_CLASS)
-    trigger('lenis-start', document.body)
 
     navParentItemEls?.forEach(nav => {
-      unset(nav, selectors.OPEN_SUB_MENU_CLASS)
       const btnSubmenu = select(selectors.NAV_ITEM_LINK_SELECTOR, nav)
       btnSubmenu?.setAttribute('aria-expanded', false)
     })
@@ -134,12 +102,6 @@ export default el => {
       if (event.keyCode === 13) {
         openSubNavOnEnter(itemEl)
       }
-    })
-  })
-
-  navItemBackEls.length > 0 && navItemBackEls.forEach((itemEl) => {
-    on(itemEl, 'click', (e) => {
-      closeSubMenu(e.target)
     })
   })
 

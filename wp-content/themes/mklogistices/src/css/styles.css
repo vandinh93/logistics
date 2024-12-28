@@ -17,7 +17,7 @@
 @import "./custom-utilities.css";
 */
 
-/* @import '../../components/header/header.css'; */
-/* @import '../../components/footer/footer.css'; */
+@import '../../components/header/header.css';
+@import '../../components/footer/footer.css';
 @import '../../components/image/image.css';
 @import '../../components/hero/hero.css';
