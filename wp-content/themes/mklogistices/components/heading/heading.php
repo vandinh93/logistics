@@ -1,14 +1,16 @@
 <?php
-  $class       = ! empty( $class ) ? $class : '';
-  $title       = ! empty( $title ) ? $title : '';
-  $is_white    = ! empty( $is_white ) ? $is_white : false;
-  $class_title = ! empty( $class_title ) ? $class_title : '';
-  $description = ! empty( $description ) ? $description : '';
-  $classes     = implode(
+  $class         = ! empty( $class ) ? $class : '';
+  $title         = ! empty( $title ) ? $title : '';
+  $is_white      = ! empty( $is_white ) ? $is_white : false;
+  $is_blue       = ! empty( $is_blue ) ? $is_blue : false;
+  $is_light_blue = ! empty( $is_light_blue ) ? $is_light_blue : false;
+  $class_title   = ! empty( $class_title ) ? $class_title : '';
+  $description   = ! empty( $description ) ? $description : '';
+  $classes       = implode(
     ' ',
     array(
       'relative flex flex-col items-center gap-2 mb-8 lg:mb-14 after:absolute after:left-0 after:right-0 after:top-4 after:z-10 after:h-px',
-      $is_white ? 'after:bg-black' : 'after:bg-white',
+      $is_blue ? 'after:bg-blue' : 'after:bg-black',
       $class,
     )
   );
@@ -16,8 +18,9 @@
     ' ',
     array(
       'relative z-20 font-bold text-fs-24 lg:text-fs-30 text-center uppercase px-4',
-      $is_white ? 'bg-white' : 'bg-blue',
-      $class_title,
+      $is_white ? 'bg-white' : '',
+      $is_light_blue ? 'bg-light-blue' : '',
+      $is_blue ? 'bg-blue' : '',
     )
   );
 ?>

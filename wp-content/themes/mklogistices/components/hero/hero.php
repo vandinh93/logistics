@@ -23,7 +23,7 @@
             <div class="text-white text-fs-16 lg:text-fs-20"><?php echo wp_kses_post( $description ); ?></div>
           <?php endif; ?>
 
-          <div class="flex gap-4 justify-center lg:gap-6">
+          <div class="flex gap-4 justify-center flex-col md:flex-row lg:gap-6">
             <div class="flex gap-2 bg-white p-3 rounded-100">
               <div class="relative z-20 js-dropdown-wrap">
                 <button class="js-btn-dropdown-hero hero__btn-dropdown" aria-expanded="false" type="button" data-icon="taobao">D</button>
@@ -36,7 +36,7 @@
               <input class="outline-0" name="keyword" type="text" class="border-0" placeholder="Tìm kiếm sản phẩm">
               <button type="submit" class="flex items-center justify-center bg-orange text-white rounded-full w-[38px] h-[38px]"><i class="fa fa-search"></i></button>
             </div>
-            <a href="#" target="_blank" class="flex items-center justify-center gap-2 text-fs-18 font-bold px-3 py-1.5 bg-orange text-white rounded-md transition-colors duration-300 hover:bg-blue">
+            <a href="#" target="_blank" class="flex items-center justify-center h-[62px] gap-2 text-fs-18 font-bold px-3 py-1.5 bg-orange text-white rounded-md transition-colors duration-300 hover:bg-blue">
               <i class="fa fa-list-alt"></i> Tạo đơn hàng
             </a>
           </div>

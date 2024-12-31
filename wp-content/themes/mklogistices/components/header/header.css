@@ -26,7 +26,7 @@
   @apply relative hover:after:w-full;
 
   &::after {
-    @apply content-[''] absolute -bottom-0.5 left-0 h-px w-0 bg-black transition-all duration-300;
+    @apply content-[''] absolute -bottom-0.5 left-0 h-px w-0 bg-black transition-all duration-300 max-lg:hidden;
   }
 }
 

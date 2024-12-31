@@ -1,6 +1,8 @@
 .wysiwyg {
   ul,
-  p {
+  p,
+  .wp-block-image,
+  .wp-block-table {
     @apply mb-6 text-base last:mb-0 xl:mb-6 3xl:text-fs-18;
   }
 
@@ -22,6 +24,14 @@
   }
 
   a {
-    @apply underline underline-offset-2 hover:no-underline;
+    @apply text-blue underline underline-offset-2 hover:no-underline;
+  }
+
+  .wp-block-image {
+    @apply mx-auto;
+
+    img {
+      @apply block mx-auto;
+    }
   }
 }

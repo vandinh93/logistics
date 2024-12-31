@@ -35,9 +35,12 @@
         the_component(
           'heading',
           array(
-            'class_title' => $classes_heading,
-            'title'       => $title,
-            'description' => $description,
+            'class_title'   => $classes_heading,
+            'title'         => $title,
+            'description'   => $description,
+            'is_white'      => 'white' === $background_color ? true : false,
+            'is_blue'       => 'blue' === $background_color ? true : false,
+            'is_light_blue' => 'light-blue' === $background_color ? true : false,
           ),
         );
       ?>
