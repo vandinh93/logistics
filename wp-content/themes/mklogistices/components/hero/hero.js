@@ -6,6 +6,8 @@ const selectors = {
   CONTENT_DROPDOWN : '.js-content-dropdown-hero',
   DROPDOWN_WRAP : '.js-dropdown-wrap',
   DROPDOWN_ITEM : '.js-dropdown-item',
+  FORM_HERO : '.js-form-hero',
+  KEYWORD : '.js-keyword',
 }
 
 const classes = {
@@ -13,6 +15,8 @@ const classes = {
 }
 
 export default el => {
+  const formEl = select(selectors.FORM_HERO, el)
+  const inputEl = select(selectors.KEYWORD, formEl)
   const btnDropdown = select(selectors.BTN_DROPDOWN, el)
   const contentDropdown = select(selectors.CONTENT_DROPDOWN, el)
   const dropdownWrap = select(selectors.DROPDOWN_WRAP, el)
@@ -28,6 +32,32 @@ export default el => {
       setAttribute('aria-expanded', false, btnDropdown)
     }
   })
+
+  const submitForm = () => {
+    if (inputEl && formEl) {
+      on(formEl, 'submit', (event) => {
+        event.preventDefault()
+
+        const query = encodeURIComponent(inputEl.value.trim())
+        const status = getAttribute('data-icon', btnDropdown)
+
+        // Define the URLs for each platform
+        let searchUrl = ''
+        if (status === '1688') {
+          searchUrl = `https://s.1688.com/selloffer/offer_search.htm?keywords=${query}`
+        } else if (status === 'taobao') {
+          searchUrl = `https://s.taobao.com/search?q=${query}`
+        } else if (status === 'tmall') {
+          searchUrl = `https://list.tmall.com/search_product.htm?q=${query}`
+        }
+
+        // Open the search URL in a new tab
+        window.open(searchUrl, '_blank')
+      })
+    }
+  }
+
+  submitForm()
 
   if (dropdownItems.length > 0) {
     dropdownItems.forEach(item => {

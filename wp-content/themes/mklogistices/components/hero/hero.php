@@ -14,7 +14,7 @@
   >
     <div class="container">
       <div class="flex h-[500px] items-center justify-center">
-        <form class="flex flex-col items-center text-center gap-4 max-w-[800px] mx-auto lg:gap-6" action="/home/search" method="get" target="_blank">
+        <form class="js-form-hero flex flex-col items-center text-center gap-4 max-w-[800px] mx-auto lg:gap-6" action="/home/search" method="get" target="_blank">
           <?php if ( ! empty( $title ) ) : ?>
             <h1 class="hero__title"><?php echo esc_html( $title ); ?></h1>
           <?php endif; ?>
@@ -33,7 +33,7 @@
                   <li><a class="hero__content-dropdown-item js-dropdown-item" href="#" title="1688"><?php echo _get_icon( '1688', 'w-9 h-9' ); ?> 1688</a></li>
                 </ul>
               </div>
-              <input class="outline-0" name="keyword" type="text" class="border-0" placeholder="Tìm kiếm sản phẩm">
+              <input class="js-keyword outline-0" name="keyword" type="text" class="border-0" placeholder="Tìm kiếm sản phẩm">
               <button type="submit" class="flex items-center justify-center bg-orange text-white rounded-full w-[38px] h-[38px]"><i class="fa fa-search"></i></button>
             </div>
             <a href="#" target="_blank" class="flex items-center justify-center h-[62px] gap-2 text-fs-18 font-bold px-3 py-1.5 bg-orange text-white rounded-md transition-colors duration-300 hover:bg-blue">

@@ -1,3 +1,7 @@
+body.is-open-menu {
+  @apply h-screen overflow-hidden;
+}
+
 .header__nav {
   @apply lg:opacity-100 lg:visible lg:flex lg:justify-end lg:flex-1;
 
