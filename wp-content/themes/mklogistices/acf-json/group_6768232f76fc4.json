@@ -686,7 +686,7 @@
             "append": ""
         },
         {
-            "key": "field_676fef514f5fd",
+            "key": "field_677822112ffba",
             "label": "Hero",
             "name": "",
             "aria-label": "",
@@ -704,9 +704,9 @@
             "selected": 0
         },
         {
-            "key": "field_676fef774f5fe",
+            "key": "field_6778221b2ffbb",
             "label": "Background",
-            "name": "background_image",
+            "name": "hero_background",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -730,9 +730,9 @@
             "preview_size": "medium"
         },
         {
-            "key": "field_676fef814f5ff",
+            "key": "field_6778223b2ffbc",
             "label": "Title",
-            "name": "title",
+            "name": "hero_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -751,9 +751,9 @@
             "append": ""
         },
         {
-            "key": "field_676fef914f600",
+            "key": "field_677822422ffbd",
             "label": "Description",
-            "name": "description",
+            "name": "hero_description",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -790,5 +790,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735389095
+    "modified": 1735926393
 }
