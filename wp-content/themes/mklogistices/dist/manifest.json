@@ -1,6 +1,14 @@
 {
+  "assets/icon/1688.png": {
+    "file": "assets/img/1688-18bef994.png",
+    "src": "assets/icon/1688.png"
+  },
+  "assets/icon/tmall.png": {
+    "file": "assets/img/tmall-33dfbc0d.png",
+    "src": "assets/icon/tmall.png"
+  },
   "main.css": {
-    "file": "assets/css/main-3017af13.css",
+    "file": "assets/css/main-6fed6b8c.css",
     "src": "main.css"
   },
   "main.js": {
@@ -8,12 +16,14 @@
       "assets/woff2/GTSuperDisplay-Regular-69db3af1.woff2",
       "assets/woff/GTSuperDisplay-Regular-b5781a55.woff",
       "assets/woff2/GTSuperDisplay-RegularItalic-89321201.woff2",
-      "assets/woff/GTSuperDisplay-RegularItalic-565343e7.woff"
+      "assets/woff/GTSuperDisplay-RegularItalic-565343e7.woff",
+      "assets/img/tmall-33dfbc0d.png",
+      "assets/img/1688-18bef994.png"
     ],
     "css": [
-      "assets/css/main-3017af13.css"
+      "assets/css/main-6fed6b8c.css"
     ],
-    "file": "assets/js/main-f63da118.js",
+    "file": "assets/js/main-e12ea5d7.js",
     "isEntry": true,
     "src": "main.js"
   },
