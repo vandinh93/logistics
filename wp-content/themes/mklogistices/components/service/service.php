@@ -17,7 +17,7 @@
       ?>
 
       <?php if ( ! empty( $services ) ) : ?>
-        <div class="relative flex flex-wrap justify-center sm:gap-y-6 sm:-mx-3 md:gap-y-10 md:-mx-5 xl:gap-y-12 xl:-mx-6">
+        <div class="relative flex flex-wrap justify-center gap-y-6 sm:-mx-3 md:gap-y-10 md:-mx-5 xl:gap-y-12 xl:-mx-6">
           <?php foreach ( $services as $item ) : ?>
             <div class="flex flex-col gap-2.5 items-center sm:w-1/2 sm:px-3 md:w-1/3 md::px-5 xl:w-1/5 lx:px-6">
               <?php
