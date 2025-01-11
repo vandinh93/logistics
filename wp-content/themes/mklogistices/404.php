@@ -1,3 +1,5 @@
-<?php get_header(); ?>
-
-<? get_footer(); ?>
+<?php
+  get_header();
+    the_component( '404' );
+  get_footer();
+?>

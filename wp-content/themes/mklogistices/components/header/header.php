@@ -8,7 +8,7 @@ $current_link     = get_permalink();
 $classes_logo     = implode(
   ' ',
   array(
-    'relative z-[99999]',
+    'relative',
     ! empty( $header_use_logo ) ? 'w-[100px] lg:w-[120px]' : 'bg-orange text-center uppercase font-semibold rounded-[30px] p-3 2xl:px-5 xl:py-3',
   )
 );
