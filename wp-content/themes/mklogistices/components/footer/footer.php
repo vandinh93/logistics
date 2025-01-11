@@ -106,7 +106,7 @@
               <p class="font-bold text-yellow"><?php echo esc_html( $item['title'] ); ?></p>
             <?php endif; ?>
             <?php if ( ! empty( $item['description'] ) ) : ?>
-              <p><?php echo esc_html( $item['description'] ); ?></p>
+              <p><?php echo wp_kses_post( $item['description'] ); ?></p>
             <?php endif; ?>
           </div>
         </div>
