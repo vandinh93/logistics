@@ -20,7 +20,7 @@
   <?php the_component('header'); ?>
   <main class="main js-main bg-gray" id="main_content">
   <?php
-    if ( is_single() ) {
+    if ( !is_404() ) {
       the_component(
         'top-bar',
         array(
@@ -33,10 +33,13 @@
         array(
           'background'  => get_field( 'hero_background', 'option' ),
           'title'       => get_field( 'hero_title', 'option' ),
+          'subtitle'    => get_field( 'hero_subtitle', 'option' ),
           'description' => get_field( 'hero_description', 'option' ),
         )
       );
+    }
 
+    if ( is_single() ) {
       the_component( 'breadcrumbs' );
     }
   ?>

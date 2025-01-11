@@ -4,7 +4,7 @@
   $description = ! empty( $description ) ? $description : '';
 ?>
 
-<?php if ( ! empty( $title ) || ! empty( $description ) ) : ?>
+<?php if ( ! empty( $subtitle ) || ! empty( $title ) || ! empty( $description ) ) : ?>
   <section
     class="hero py-10 !bg-cover !bg-fixed !bg-center !bg-no-repeat lg:min-h-[550px] lg:py-20 xl:min-h-[600px]"
     <?php if ( ! empty( $background ) && ! empty( $background['url'] ) ) : ?>
@@ -14,9 +14,13 @@
   >
     <div class="container">
       <div class="flex h-[500px] items-center justify-center">
-        <form class="js-form-hero flex flex-col items-center text-center gap-4 max-w-[800px] mx-auto lg:gap-6" action="/home/search" method="get" target="_blank">
+        <form class="js-form-hero flex flex-col items-center text-center gap-4 lg:gap-6" action="/home/search" method="get" target="_blank">
           <?php if ( ! empty( $title ) ) : ?>
             <h1 class="hero__title"><?php echo esc_html( $title ); ?></h1>
+          <?php endif; ?>
+
+          <?php if ( ! empty( $subtitle ) ) : ?>
+            <h2 class="hero__title"><?php echo esc_html( $subtitle ); ?></h2>
           <?php endif; ?>
 
           <?php if ( ! empty( $description ) ) : ?>
