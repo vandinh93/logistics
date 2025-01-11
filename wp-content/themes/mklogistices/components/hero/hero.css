@@ -1,9 +1,5 @@
 .hero__title {
   @apply relative z-10 w-fit text-fs-44 text-white font-bold uppercase lg:text-fs-55;
-
-  &::before {
-    @apply content-[''] absolute bottom-0 left-0 right-0 h-1/3 rounded-3xl bg-orange z-[-1];
-  }
 }
 
 .hero__btn-dropdown {

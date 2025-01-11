@@ -19,7 +19,7 @@ body.is-open-menu {
 }
 
 .header__nav-item-link {
-  @apply px-5 py-2;
+  @apply px-5 md:px-3 3xl:px-5 py-2;
 }
 
 .header__nav-title {

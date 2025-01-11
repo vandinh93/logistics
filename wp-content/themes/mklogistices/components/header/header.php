@@ -1,33 +1,48 @@
 <?php
-$logo         = get_field('logo', 'option');
-$main_menu    = get_field('main_menu', 'option');
-$current_link = get_permalink();
+$header_use_logo  = get_field('header_use_logo', 'option');
+$header_logo_text = get_field('header_logo_text', 'option');
+$header_slogan    = get_field('header_slogan', 'option');
+$header_logo      = get_field('header_logo', 'option');
+$main_menu        = get_field('main_menu', 'option');
+$current_link     = get_permalink();
+$classes_logo     = implode(
+  ' ',
+  array(
+    'relative z-[99999]',
+    ! empty( $header_use_logo ) ? 'w-[100px] lg:w-[120px]' : 'bg-orange text-center uppercase font-semibold rounded-[30px] p-3 2xl:px-5 xl:py-3',
+  )
+);
 ?>
 <header class="header py-5" data-module="header">
-  <div class="container">
+  <div class="container max-2xl:px-5">
     <div class="flex items-center max-lg:justify-between">
       <a
-        class="relative z-[99999] w-[100px] lg:w-[120px]"
+        class="<?php echo esc_attr( $classes_logo ); ?>"
         href="<?php echo home_url('/'); ?>"
         title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"
         rel="home"
         aria-label="<?php _e('Go to homepage', 'mklogistics'); ?>"
       >
         <?php
-        if ( !empty($logo) ) :
+        if ( ! empty( $header_use_logo ) && ! empty( $header_logo ) ) :
           the_component(
             'image',
             array(
               'class' => 'aspect-[100/56] w-[100px] lg:w-[120px]',
-              'image' => $logo,
+              'image' => $header_logo,
               'alt'   => get_bloginfo( 'name', 'display' ),
               'cover' => true,
             )
           );
-        else: ?>
-          <span><?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?></span>
+        endif; ?>
+
+        <?php if ( empty( $header_use_logo ) && ! empty( $header_logo_text ) ) : ?>
+          <h1 class="text-fs-18 text-black 2xl:text-fs-24"><?php echo esc_attr( $header_logo_text ); ?></h1>
         <?php endif; ?>
       </a>
+      <?php if ( empty( $header_use_logo ) && ! empty( $header_slogan ) ) : ?>
+        <p class="text-fs-12 text-center p-2.5 rounded-[10px] bg-blue uppercase font-semibold text-white max-md:mx-3 max-md:max-w-[148px] md:text-fs-14 3xl:text-fs-18 lg:ml-10 lg:px-5"><?php echo esc_attr( $header_slogan ); ?></p>
+      <?php endif; ?>
       <div class="header__nav js-header-nav lg:items-center">
         <div class="header__nav-inner js-header-nav-inner">
           <?php if (!empty($main_menu)) : ?>
