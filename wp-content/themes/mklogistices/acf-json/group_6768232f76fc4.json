@@ -751,6 +751,27 @@
             "append": ""
         },
         {
+            "key": "field_67826f09f4835",
+            "label": "Subtitle",
+            "name": "hero_subtitle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_677822422ffbd",
             "label": "Description",
             "name": "hero_description",
@@ -790,5 +811,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735926393
+    "modified": 1736601396
 }
