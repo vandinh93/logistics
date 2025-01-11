@@ -536,7 +536,7 @@
                     "label": "Description",
                     "name": "description",
                     "aria-label": "",
-                    "type": "text",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -546,11 +546,11 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
+                    "allow_in_bindings": 1,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
                     "parent_repeater": "field_67682f868a692"
                 }
             ]
@@ -811,5 +811,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736601396
+    "modified": 1736602087
 }
