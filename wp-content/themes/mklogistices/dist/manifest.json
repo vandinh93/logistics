@@ -8,39 +8,19 @@
     "src": "assets/icon/tmall.png"
   },
   "main.css": {
-    "file": "assets/css/main-a8a8e8a9.css",
+    "file": "assets/css/main-3679b256.css",
     "src": "main.css"
   },
   "main.js": {
     "assets": [
-      "assets/woff2/GTSuperDisplay-Regular-69db3af1.woff2",
-      "assets/woff/GTSuperDisplay-Regular-b5781a55.woff",
-      "assets/woff2/GTSuperDisplay-RegularItalic-89321201.woff2",
-      "assets/woff/GTSuperDisplay-RegularItalic-565343e7.woff",
       "assets/img/tmall-33dfbc0d.png",
       "assets/img/1688-18bef994.png"
     ],
     "css": [
-      "assets/css/main-a8a8e8a9.css"
+      "assets/css/main-3679b256.css"
     ],
-    "file": "assets/js/main-d32d694d.js",
+    "file": "assets/js/main-2f24d344.js",
     "isEntry": true,
     "src": "main.js"
-  },
-  "src/fonts/GTSuperDisplay-Regular.woff": {
-    "file": "assets/woff/GTSuperDisplay-Regular-b5781a55.woff",
-    "src": "src/fonts/GTSuperDisplay-Regular.woff"
-  },
-  "src/fonts/GTSuperDisplay-Regular.woff2": {
-    "file": "assets/woff2/GTSuperDisplay-Regular-69db3af1.woff2",
-    "src": "src/fonts/GTSuperDisplay-Regular.woff2"
-  },
-  "src/fonts/GTSuperDisplay-RegularItalic.woff": {
-    "file": "assets/woff/GTSuperDisplay-RegularItalic-565343e7.woff",
-    "src": "src/fonts/GTSuperDisplay-RegularItalic.woff"
-  },
-  "src/fonts/GTSuperDisplay-RegularItalic.woff2": {
-    "file": "assets/woff2/GTSuperDisplay-RegularItalic-89321201.woff2",
-    "src": "src/fonts/GTSuperDisplay-RegularItalic.woff2"
   }
 }
