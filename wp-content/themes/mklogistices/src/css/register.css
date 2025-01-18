@@ -42,7 +42,16 @@
     }
 
     .user-registration-error {
-      @apply !text-white !flex !items-center !mb-8 !border-t-error;
+      @apply !text-white !mb-8 !border-t-error;
+
+      &::before,
+      strong {
+        @apply !mr-1;
+      }
+    }
+
+    .user-registration-message {
+      @apply flex items-center text-white;
 
       &::before,
       strong {
