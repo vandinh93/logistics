@@ -8,7 +8,7 @@
     "src": "assets/icon/tmall.png"
   },
   "main.css": {
-    "file": "assets/css/main-c738f3d4.css",
+    "file": "assets/css/main-2b5cdc4f.css",
     "src": "main.css"
   },
   "main.js": {
@@ -17,9 +17,9 @@
       "assets/img/1688-18bef994.png"
     ],
     "css": [
-      "assets/css/main-c738f3d4.css"
+      "assets/css/main-2b5cdc4f.css"
     ],
-    "file": "assets/js/main-ee33e9da.js",
+    "file": "assets/js/main-781d060b.js",
     "isEntry": true,
     "src": "main.js"
   }
