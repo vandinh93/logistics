@@ -12,8 +12,8 @@ module.exports = {
   theme: {
     fontFamily: {
       arial: 'Arial',
-      body: 'DM Sans, sans-serif',
-      heading: 'GT Super Display',
+      body: 'Montserrat',
+      heading: 'Roboto',
     },
     fontSize: {
       'fs-0': ['0', { lineHeight: '0' }],

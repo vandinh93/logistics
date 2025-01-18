@@ -101,15 +101,27 @@ $classes_logo     = implode(
 
         <div class="header__nav-register max-lg:px-5 max-lg:pt-5 lg:ml-10 lg:relative lg:top-px">
           <ul class="flex gap-2.5 text-fs-14">
-            <li>
-              <a class="flex items-center gap-2 header__link" href="#">
-                <i class="far fa-user-circle"></i> Đăng nhập
-              </a>
-            </li>
-            <span>/</span>
-            <li>
-              <a class="header__link" href="#">Đăng ký</a>
-            </li>
+            <?php if ( is_user_logged_in() ) : ?>
+              <li>
+                <a class="flex items-center gap-2 header__link" href="/my-account">
+                  <i class="far fa-user-circle"></i> My account
+                </a>
+              </li>
+              <span>/</span>
+              <li>
+                <a class="header__link" href="<?php echo wp_logout_url( home_url() ); ?>">Đăng xuất</a>
+              </li>
+            <?php else : ?>
+              <li>
+                <a class="flex items-center gap-2 header__link" href="/dang-nhap">
+                  <i class="far fa-user-circle"></i> Đăng nhập
+                </a>
+              </li>
+              <span>/</span>
+              <li>
+                <a class="header__link" href="/dang-ky">Đăng ký</a>
+              </li>
+            <?php endif; ?>
           </ul>
         </div>
       </div>

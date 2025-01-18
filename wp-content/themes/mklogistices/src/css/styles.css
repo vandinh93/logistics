@@ -1,9 +1,9 @@
 @import "tailwindcss/base";
-@import "./fonts.css";
 @import "./custom-base-styles.css";
 @import "./buttons.css";
 @import "./wysiwyg.css";
 @import "./animation.css";
+@import "./register.css";
 
 @import "tailwindcss/components";
 /*

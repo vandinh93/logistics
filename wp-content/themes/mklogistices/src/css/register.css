@@ -1,0 +1,100 @@
+.my-register {
+  #user-registration,
+  .ur-frontend-form {
+    @apply max-w-[500px] p-10 mx-auto my-0 bg-blue shadow-lg text-white rounded-lg;
+
+    p {
+      @apply text-white;
+    }
+
+    .ur-frontend-form {
+      @apply p-0 m-0 border-0;
+    }
+
+    .ur-form-grid {
+      @apply p-0;
+    }
+
+    label.ur-label {
+      @apply !mt-0 !font-normal;
+    }
+
+    input,
+    label {
+      @apply !text-fs-14 lg:!text-base;
+    }
+
+    input {
+      @apply !py-3 !px-4 !text-black !rounded-md !mb-0;
+    }
+
+    .ur-submit-button {
+      @apply float-none mt-5 !mb-3 mr-0 px-10 !border border-solid !border-white !text-white transition-all duration-300 xl:hover:!bg-white xl:hover:!text-black;
+    }
+
+    .lost_password {
+      @apply mb-2;
+    }
+  }
+
+  .user-registration.ur-frontend-form {
+    .ur-form-row {
+      @apply flex-col !mb-0;
+    }
+
+    .ur-form-grid {
+      @apply !w-full !px-0 !mb-5;
+    }
+
+    .ur-submit-button {
+      @apply !my-0;
+    }
+  }
+
+  .user-registration-form__label-for-checkbox {
+    @apply relative;
+
+    input {
+      @apply !absolute !w-0 !h-0 opacity-0 cursor-pointer;
+
+      &:checked + span {
+        &::before {
+          @apply bg-white;
+        }
+
+        &::after {
+          @apply rotate-[405deg] scale-100 border-black;
+        }
+      }
+    }
+
+    span {
+      @apply relative block h-full pl-7 cursor-pointer select-none hover:before:border-blue transition-colors duration-300 ease-in-out;
+
+      &::before,
+      &::after {
+        @apply content-[''] absolute;
+      }
+
+      &::before {
+        @apply top-0 left-0 w-5 h-5 bg-white rounded-[3px] transition-all duration-300 overflow-hidden;
+      }
+
+      &::after {
+        @apply top-1 left-2 w-[5px] h-2.5 border-b border-r border-black scale-0 rotate-0 transition-all duration-300;
+      }
+    }
+  }
+
+  .user-registration-login-title {
+    @apply block mb-8 font-body text-center text-fs-32 font-bold uppercase lg:text-fs-44;
+  }
+
+  a {
+    @apply relative xl:hover:after:w-full;
+
+    &::after{
+      @apply content-[''] absolute bottom-0 left-0 w-0 h-px bg-white transition-[width] duration-300;
+    }
+  }
+}

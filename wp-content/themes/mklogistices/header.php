@@ -6,11 +6,8 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-    <link rel="preload" as="font" href="<?= get_bloginfo('template_directory') . '/src/fonts/GTSuperDisplay-Regular.woff2' ?>" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="<?= get_bloginfo('template_directory') . '/src/fonts/GTSuperDisplay-Regular.woff' ?>" type="font/woff" crossorigin>
-    <link rel="preload" as="font" href="<?= get_bloginfo('template_directory') . '/src/fonts/GTSuperDisplay-RegularItalic.woff2' ?>" type="font/woff2" crossorigin>
-    <link rel="preload" as="font" href="<?= get_bloginfo('template_directory') . '/src/fonts/GTSuperDisplay-RegularItalic.woff' ?>" type="font/woff" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
@@ -20,14 +17,14 @@
   <?php the_component('header'); ?>
   <main class="main js-main bg-gray" id="main_content">
   <?php
-    if ( !is_404() ) {
-      the_component(
-        'top-bar',
-        array(
-          'text' => get_field( 'topbar_text', 'option' )
-        )
-      );
+    the_component(
+      'top-bar',
+      array(
+        'text' => get_field( 'topbar_text', 'option' )
+      )
+    );
 
+    if ( !is_404() && !is_page( 'dang-nhap' ) && !is_page( 'dang-ky' ) && !is_page( 'my-account' ) ) {
       the_component(
         'hero',
         array(
@@ -39,7 +36,7 @@
       );
     }
 
-    if ( is_single() ) {
+    if ( !is_front_page() && !is_page( 'dang-nhap' ) && !is_page( 'dang-ky' ) && !is_page( 'my-account' ) ) {
       the_component( 'breadcrumbs' );
     }
   ?>
