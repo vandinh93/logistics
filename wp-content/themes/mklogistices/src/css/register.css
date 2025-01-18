@@ -28,7 +28,8 @@
       @apply !py-3 !px-4 !text-black !rounded-md !mb-0;
     }
 
-    .ur-submit-button {
+    .ur-submit-button,
+    .user-registration-login-nonce {
       @apply float-none mt-5 !mb-3 mr-0 px-10 !border border-solid !border-white !text-white transition-all duration-300 xl:hover:!bg-white xl:hover:!text-black;
     }
 
