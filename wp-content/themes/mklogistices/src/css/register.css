@@ -28,13 +28,26 @@
       @apply !py-3 !px-4 !text-black !rounded-md !mb-0;
     }
 
-    .ur-submit-button,
-    .user-registration-login-nonce {
-      @apply float-none mt-5 !mb-3 mr-0 px-10 !border border-solid !border-white !text-white transition-all duration-300 xl:hover:!bg-white xl:hover:!text-black;
+    input[type="submit"],
+    button[type="submit"] {
+      @apply float-none !mt-0 !mb-3 mr-0 !px-8 !rounded-100 !font-semibold !font-body !border border-solid !border-white !text-white transition-all duration-300 xl:hover:!bg-white xl:hover:!text-black;
     }
 
     .lost_password {
       @apply mb-2;
+    }
+
+    .user-registration-form-row {
+      @apply !mb-5;
+    }
+
+    .user-registration-error {
+      @apply !text-white !flex !items-center !mb-8 !border-t-error;
+
+      &::before,
+      strong {
+        @apply !mr-1;
+      }
     }
   }
 
