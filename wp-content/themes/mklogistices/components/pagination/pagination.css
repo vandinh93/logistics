@@ -1,0 +1,23 @@
+.pagination {
+  @apply flex justify-center w-full mx-auto mt-10 xl:mt-14;
+}
+
+.pagination__list {
+  @apply flex items-center justify-center gap-4;
+
+  .sr-only {
+    @apply hidden;
+  }
+}
+
+.page-numbers {
+  @apply relative text-fs-14 lg:text-base hover:after:w-full;
+
+  &::after {
+    @apply content-[''] absolute -bottom-0.5 left-0 w-0 h-px bg-black transition-all duration-300;
+  }
+
+  &.current {
+    @apply after:w-full;
+  }
+}

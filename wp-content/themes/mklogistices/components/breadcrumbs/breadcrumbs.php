@@ -16,7 +16,7 @@
   }
 ?>
 <div class="<?= $class; ?>">
-  <nav class="container" role="navigation" aria-label="<?php _e( 'Breadcrumbs' ); ?>">
+  <nav class="container !max-w-[1200px]" role="navigation" aria-label="<?php _e( 'Breadcrumbs' ); ?>">
     <ul class="flex items-center text-fs-14 lg:text-base leading-none text-black">
       <li class="inline-block"><a class="text-black transition-colors duration-300 md:hover:text-blue" href="<?= $base_url; ?>"><?= $base_title; ?></a></li>
       <li class="inline-block"><?= _get_svg('icon-right'); ?></li>

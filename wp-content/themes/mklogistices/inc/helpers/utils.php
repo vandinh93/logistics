@@ -106,3 +106,70 @@ function the_lazy_img( $image, $size, $class, $sizes = '', $alt, $image_attr, $f
     $image_attr
   );
 }
+
+/**
+ * Get Article Card
+ *
+ * @param int $post_id
+ *
+ * @return array An array.
+ */
+function mk_get_article_card( int $post_id = null ) {
+  if ( empty( $post_id ) ) return array();
+
+  $result          = array();
+
+  $result = array(
+    'title'       => get_the_title( $post_id ),
+    'image'       => get_post_thumbnail_id( $post_id ),
+    'description' => get_the_excerpt( $post_id ),
+    'cta'         => array(
+      'url'   => get_the_permalink( $post_id ),
+      'title' => 'Xem chi tiết',
+    ),
+  );
+
+	return $result;
+}
+
+/**
+ * Get Article Listing
+ *
+ * @param int    $per_page
+ * @param string $category_slug
+ * @param int    $paged
+ *
+ * @return array An array.
+ */
+function mk_get_article_listing( int $per_page = 12, $category_slug = '', $paged = 1 ) {
+  $results = array();
+	$args    = array(
+		'post_type'      => 'post',
+		'posts_per_page' => $per_page,
+		'paged'          => $paged,
+		'post_status'    => 'publish',
+    'orderby'        => 'date',
+    'order'          => 'DESC',
+	);
+
+  if ( ! empty( $category_slug ) ) {
+    $args['category_name'] = $category_slug;
+  }
+
+	$query = new WP_Query( $args );
+
+	if ( $query->have_posts() ) {
+		while ( $query->have_posts() ) :
+			$query->the_post();
+
+      $results['posts'][] = mk_get_article_card( get_the_ID() );
+		endwhile;
+
+    $results['found_post'] = $query->found_posts;
+    $results['max_num_pages'] = $query->max_num_pages;
+    $results['paged'] = $paged;
+    wp_reset_postdata();
+	}
+
+	return $results;
+}

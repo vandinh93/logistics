@@ -36,7 +36,7 @@
       );
     }
 
-    if ( !is_front_page() && !is_page( 'dang-nhap' ) && !is_page( 'dang-ky' ) && !is_page( 'my-account' ) ) {
+    if ( !is_front_page() && !is_page( 'dang-nhap' ) && !is_page( 'dang-ky' ) && !is_page( 'my-account' ) && !is_category() ) {
       the_component( 'breadcrumbs' );
     }
   ?>
