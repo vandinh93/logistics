@@ -21,7 +21,7 @@
       endif;
     ?>
 
-    <div class="flex flex-col gap-3 flex-1">
+    <div class="flex flex-col justify-between gap-2.5 flex-1">
       <div class="flex flex-col items-center gap-2.5">
         <?php if ( ! empty( $title ) ) : ?>
           <h3 class="text-fs-14 lg:text-base font-bold"><?php echo esc_html( $title ); ?></h3>

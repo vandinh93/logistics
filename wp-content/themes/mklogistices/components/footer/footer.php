@@ -12,7 +12,7 @@
   $socials           = ! empty( get_field( 'socials', 'option' ) ) ? get_field( 'socials', 'option' ) : array();
 ?>
 
-<footer class="site-footer text-white bg-blue py-10 lg:py-20" data-module="footer">
+<footer class="site-footer text-white bg-blue py-10 lg:py-20">
   <div class="container">
     <div class="flex flex-wrap gap-y-6 md:gap-y-10 pb-8 mb-8 border-b border-white/10">
       <div class="w-full md:w-1/2 md:pr-5 lg:w-1/4 xl:pr-8">
