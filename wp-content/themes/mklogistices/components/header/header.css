@@ -50,7 +50,7 @@ body.is-open-menu {
   @apply transition-all duration-300;
 
   @screen lg {
-    @apply absolute top-full left-0 min-w-[250px] !max-h-none p-5 bg-white translate-y-[100px] opacity-0 invisible;
+    @apply absolute top-full left-0 z-50 min-w-[250px] !max-h-none p-5 bg-white translate-y-[100px] opacity-0 invisible;
   }
 
   @media ( max-width: 1199px ) {
