@@ -5,7 +5,10 @@ const selectors = {
   LOADING: '.js-loading',
   RESULT: '.js-result',
   INPUT_TRACKING: '.js-input-tracking',
-  DATA_TABLE_BODY: '.js-data-tablet-body',
+  TABLE: '.js-table',
+  TABLE_BODY: '.js-table-body',
+  NO_RESULT: '.js-no-result',
+  FORM_TRACKING: '.js-form-tracking',
 }
 
 export default el => {
@@ -14,10 +17,17 @@ export default el => {
   const loadingEl = select(selectors.LOADING, el)
   const inputEl = select(selectors.INPUT_TRACKING, el)
   const resultEl = select(selectors.RESULT, el)
-  const tableBodyEl = select(selectors.DATA_TABLE_BODY, el)
+  const noResultEl = select(selectors.NO_RESULT, el)
+  const tableEl = select(selectors.TABLE, el)
+  const formEl = select(selectors.FORM_TRACKING, el)
+  const tableBodyEl = select(selectors.TABLE_BODY, el)
 
-  async function fetchData() {
+  async function fetchData(e) {
+    e.preventDefault()
+
     loadingEl.style.display = 'flex'
+    noResultEl.style.display = 'none'
+    tableEl.style.display = 'none'
     tableBodyEl.innerHTML = ''
 
     let trackingNumber = inputEl.value
@@ -31,9 +41,10 @@ export default el => {
         redirect: 'follow'
       })
       const data = await response.json()
+      resultEl.style.display = 'block'
 
-      if (data && data.length > 0) {
-        resultEl.style.display = 'block'
+      if (data.length > 0) {
+        tableEl.style.display = 'block'
 
         data.forEach(item => {
           let row = tableBodyEl.insertRow()
@@ -44,15 +55,23 @@ export default el => {
           row.insertCell(3).textContent = item.name
           row.insertCell(4).textContent = item.line
         })
+      } else {
+        tableEl.style.display = 'none'
+        noResultEl.style.display = 'block'
       }
     } catch (error) {
+      resultEl.style.display = 'block'
+      tableEl.style.display = 'none'
+      noResultEl.style.display = 'block'
+
       console.error('Lỗi khi lấy dữ liệu:', error)
     } finally {
       loadingEl.style.display = 'none'
     }
   }
 
-  if (fetchButtonEl) {
+  if (fetchButtonEl || formEl) {
     fetchButtonEl.addEventListener('click', fetchData)
+    formEl.addEventListener('submit', fetchData)
   }
 }

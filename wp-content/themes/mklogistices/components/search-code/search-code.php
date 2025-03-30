@@ -1,7 +1,7 @@
 <?php
   $background  = ! empty( $background ) ? $background : array();
   $title       = ! empty( $title ) ? $title : '';
-  $api_url = ! empty( $api_url ) ? $api_url : '';
+  $api_url     = ! empty( $api_url ) ? $api_url : '';
 ?>
 
 <?php if ( ! empty( $subtitle ) || ! empty( $title ) || ! empty( $api_url ) ) : ?>
@@ -32,10 +32,10 @@
             <?php endif; ?>
 
             <div class="flex flex-col items-center gap-4 w-full lg:gap-6">
-              <div class="relative max-w-[400px] w-full">
+              <form class="js-form-tracking relative max-w-[400px] w-full">
                 <input type="text" class="js-input-tracking w-full h-[62px] px-5 py-3 bg-white text-black text-fs-16 border-0 rounded-100 focus:outline-0" placeholder="Nhập mã vận đơn...">
                 <button class="js-fetch-button absolute right-5 bottom-0 top-0 my-auto flex items-center justify-center bg-orange text-white rounded-full w-[38px] h-[38px]"><i class="fa fa-search"></i></button>
-              </div>
+              </form>
               <p class="js-loading loading text-fs-16"><span class="spinner"></span> Đang tìm dữ liệu...</p>
             </div>
           </div>
@@ -46,7 +46,8 @@
     <div class="container overflow-hidden">
       <div class="js-result my-10 hidden lg:my-20">
         <h3 class="text-fs-24 text-black mb-5 lg:text-fs-32">Danh sách mã vận đơn đã tìm kiếm</h3>
-        <div class="overflow-x-auto w-full">
+        <p class="js-no-result text-fs-16 text-black">Không có mã vận đơn phù hợp với kết quả tìm kiếm.</p>
+        <div class="overflow-x-auto w-full js-table">
           <table class="min-w-[800px] text-center">
             <thead>
               <tr>
@@ -57,8 +58,7 @@
                 <th>LINE</th>
               </tr>
             </thead>
-            <tbody class="js-data-tablet-body">
-              <!-- Dữ liệu sẽ được thêm vào đây -->
+            <tbody class="js-table-body">
             </tbody>
           </table>
         </div>

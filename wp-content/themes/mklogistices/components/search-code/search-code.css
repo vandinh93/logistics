@@ -7,7 +7,7 @@ tr {
 }
 
 th, td {
-  @apply p-2 border border-black text-black text-center;
+  @apply p-2 border border-grey text-black text-center;
 }
 
 th {
