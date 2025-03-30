@@ -38,9 +38,11 @@ export default el => {
         data.forEach(item => {
           let row = tableBodyEl.insertRow()
 
-          row.insertCell(0).textContent = item[0].code
-          row.insertCell(1).textContent = item[0].stt
-          row.insertCell(2).textContent = new Date(item[0].date).toLocaleDateString("vi-VN")
+          row.insertCell(0).textContent = new Date(item.date).toLocaleDateString("vi-VN")
+          row.insertCell(1).textContent = item.stt
+          row.insertCell(2).textContent = item.code
+          row.insertCell(3).textContent = item.name
+          row.insertCell(4).textContent = item.line
         })
       }
     } catch (error) {

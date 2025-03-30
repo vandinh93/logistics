@@ -43,21 +43,25 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container overflow-hidden">
       <div class="js-result my-10 hidden lg:my-20">
         <h3 class="text-fs-24 text-black mb-5 lg:text-fs-32">Danh sách mã vận đơn đã tìm kiếm</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Mã Vận Đơn</th>
-              <th>Trạng Thái</th>
-              <th>Ngày Giao</th>
-            </tr>
-          </thead>
-          <tbody class="js-data-tablet-body">
-            <!-- Dữ liệu sẽ được thêm vào đây -->
-          </tbody>
-        </table>
+        <div class="overflow-x-auto w-full">
+          <table class="min-w-[800px] text-center">
+            <thead>
+              <tr>
+                <th>Ngày</th>
+                <th>Trạng Thái</th>
+                <th>Mã Vận Đơn</th>
+                <th>Tên Khách</th>
+                <th>LINE</th>
+              </tr>
+            </thead>
+            <tbody class="js-data-tablet-body">
+              <!-- Dữ liệu sẽ được thêm vào đây -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
