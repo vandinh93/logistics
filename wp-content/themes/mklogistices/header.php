@@ -24,7 +24,7 @@
       )
     );
 
-    if ( !is_404() && !is_page( 'dang-nhap' ) && !is_page( 'dang-ky' ) && !is_page( 'my-account' ) ) {
+    if ( !is_404() && !is_page( 'dang-nhap' ) && !is_page( 'dang-ky' ) && !is_page( 'my-account' ) && !is_page( 'tra-cuu-ma-van-don' ) ) {
       the_component(
         'hero',
         array(
@@ -36,7 +36,7 @@
       );
     }
 
-    if ( !is_front_page() && !is_page( 'dang-nhap' ) && !is_page( 'dang-ky' ) && !is_page( 'my-account' ) && !is_category() ) {
+    if ( !is_front_page() && !is_page( 'dang-nhap' ) && !is_page( 'dang-ky' ) && !is_page( 'my-account' ) && !is_category() && !is_page( 'tra-cuu-ma-van-don' ) ) {
       the_component( 'breadcrumbs' );
     }
   ?>

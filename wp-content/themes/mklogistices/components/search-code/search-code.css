@@ -1,0 +1,30 @@
+table {
+  @apply w-full border-collapse mt-5;
+}
+
+tr {
+  @apply w-full;
+}
+
+th, td {
+  @apply p-2 text-left border border-black text-black;
+}
+
+th {
+  @apply bg-blue text-white;
+}
+
+.loading {
+  @apply hidden items-center gap-2 text-white;
+}
+
+.spinner {
+  @apply inline-block w-5 h-5 border-[3px] border-solid border-white border-t-blue rounded-100;
+
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
